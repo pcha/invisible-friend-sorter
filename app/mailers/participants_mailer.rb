@@ -6,8 +6,8 @@ class ParticipantsMailer < ApplicationMailer
   #   en.participants_mailer.notify_friend.subject
   #
   def notify_friend
-    @greeting = "Hola #{params[:name]}, sos el amigo invisible de es #{params[:invisible_friend]}. Buscá algo lindo para regalarle!"
+    @greeting = "Hola #{params[:name]}, sos el amigo invisible de #{params[:friend_name]}. Buscá algo lindo para regalarle!"
 
-    mail to: params[:mail_address], subject: "Notificación de amigo asignado"
+    mail to: params[:email_address], subject: "Notificación de amigo asignado"
   end
 end
