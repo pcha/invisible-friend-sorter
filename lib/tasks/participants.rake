@@ -26,7 +26,7 @@ namespace :participants do
     end
     participants.each do |p|
       name = p['name']
-      email_address = p['email']
+      email_address = p['mail']
       friend = Participant.find p['friend']
       friend_name = friend['name']
       # puts "#{name} => #{friend_name}"
