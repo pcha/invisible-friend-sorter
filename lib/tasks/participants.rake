@@ -26,10 +26,12 @@ namespace :participants do
     end
     participants.each do |p|
       name = p['name']
+      email_address = p['email']
       friend = Participant.find p['friend']
       friend_name = friend['name']
       # puts "#{name} => #{friend_name}"
-
+      # UserMailer.with(user: user).weekly_summary.deliver_now
+      ParticipantsMailer.with(name: name, email_address: email_address, friend_name: friend_name).notify_friend.deliver_now
     end
   end
 end
